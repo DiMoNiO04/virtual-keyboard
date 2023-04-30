@@ -217,7 +217,7 @@ export const keys = [
   },
   {
     keyCode: 220,
-    code: 'Backslah',
+    code: 'Backslash',
     keyEn: '\\',
     keyEnShift: '|',
     keyRu: '\\',
@@ -361,7 +361,7 @@ export const keys = [
   },
   {
     keyCode: 67,
-    code: 'KeyС',
+    code: 'KeyC',
     keyEn: 'с',
     keyEnShift: 'C',
     keyRu: 'c',
@@ -449,7 +449,7 @@ export const keys = [
   },
   {
     keyCode: 91,
-    code: 'Meta',
+    code: 'MetaLeft',
     keyEn: 'Win',
     keyEnShift: 'Win',
     keyRu: 'Win',

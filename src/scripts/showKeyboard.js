@@ -9,4 +9,4 @@ const showKeyboard = (language) => {
   keyboardBody.innerHTML = out;
 };
 
-document.addEventListener('DOMContentLoaded', showKeyboard('keyEnShift'));
+document.addEventListener('DOMContentLoaded', showKeyboard('keyEn'));

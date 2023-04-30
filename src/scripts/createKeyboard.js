@@ -12,7 +12,7 @@ title.textContent = 'RSSchool Виртуальная клавиатура';
 mainBlock.append(title);
 
 // Поля для ввода и выводы
-const textarea = document.createElement('textarea');
+export const textarea = document.createElement('textarea');
 textarea.className = 'textarea';
 textarea.rows = 6;
 textarea.cols = 72;
