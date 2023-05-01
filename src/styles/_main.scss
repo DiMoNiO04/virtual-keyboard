@@ -1,3 +1,7 @@
+body {
+	background-color: #c5c5c5;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
@@ -20,6 +24,8 @@
 	font-size: 24px;
 	color: rgb(3, 104, 70);
 	box-sizing: border-box;
+	border: 5px solid #000;
+	border-radius: 10px;
 }
 
 .keyboard {

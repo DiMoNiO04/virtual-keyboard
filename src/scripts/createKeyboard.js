@@ -8,7 +8,7 @@ BODY.append(mainBlock);
 // Заголовок
 const title = document.createElement('h1');
 title.className = 'title';
-title.textContent = 'RSSchool Виртуальная клавиатура';
+title.textContent = 'Virtual Keyboard';
 mainBlock.append(title);
 
 // Поля для ввода и выводы
@@ -33,7 +33,7 @@ textCreate.className = 'text__content';
 
 const languageChange = document.createElement('p');
 languageChange.className = 'text__content';
-languageChange.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
+languageChange.textContent = 'Для переключения языка комбинация: левыe Ctrl + Alt';
 textBody.append(textCreate);
 
 textBody.append(languageChange);
