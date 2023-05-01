@@ -1,4 +1,4 @@
-import { BODY } from './consts';
+const BODY = document.body;
 
 // Главный блок центрирующий
 const mainBlock = document.createElement('div');
