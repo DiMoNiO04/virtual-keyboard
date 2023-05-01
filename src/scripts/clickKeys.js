@@ -5,8 +5,10 @@ const keysHTML = document.querySelectorAll('.key');
 
 document.addEventListener('keydown', (event) => {
 	keysHTML.forEach(function(key) {
-		if( event.code == key.getAttribute('data-key') ) {
-			key.classList.add('active');
+		if( event.code == key.getAttribute('data-key')) {
+			if(event.key !== 'CapsLock') {
+				key.classList.add('active');
+			}
 			if( event.code === 'CapsLock' || event.code === 'Space' || 
 					event.code === 'Tab' || event.code === 'ShiftLeft' || 
 					event.code === 'ShiftRight' || event.code === 'Backspace' || 
@@ -26,12 +28,11 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
 	keysHTML.forEach(function(key) {
 		if( event.code == key.getAttribute('data-key') ) {
-			if( event.code === 'CapsLock' ) {
-				return;
+			if( event.code !== 'CapsLock' ) {
+				setTimeout(() => {
+					key.classList.remove('active')
+				}, 100)
 			}
-			setTimeout(() => {
-				key.classList.remove('active')
-			}, 100)
 		}
 	})
 })
