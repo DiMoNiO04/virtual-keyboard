@@ -129,7 +129,7 @@ export const keys = [
     keyRuDown: '0',
     keyRuUp: ')',
 		keyRuCaps: '0',
-		keyEnShiftCaps: ')'
+		keyRuShiftCaps: ')'
   },
   {
     keyCode: 189,
@@ -141,7 +141,7 @@ export const keys = [
     keyRuDown: '-',
     keyRuUp: '_',
 		keyRuCaps: '-',
-		keyEnShiftCaps: '_'
+		keyRuShiftCaps: '_'
   },
   {
     keyCode: 187,

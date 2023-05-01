@@ -106,24 +106,63 @@ const showKeyboard = (language, KEY_VIEW) => {
 document.addEventListener('load', showKeyboard(language, KEY_DOWN))
 
 
-
+//CapsLock
 let isDownCaps = false;
 const CAPS_LOCK_KEY = document.querySelector('[data-key="CapsLock"]')
 const capsLockKeys = (event) => {
 	if(event.key === "CapsLock" && isDownCaps === false) {
 		CAPS_LOCK_KEY.classList.toggle('active');
 		showKeyboard(language, KEY_CAPS)
+		isDownCaps = !isDownCaps;
 	} else if(event.key === "CapsLock" && isDownCaps === true) {
 		CAPS_LOCK_KEY.classList.toggle('active');
 		showKeyboard(language, KEY_DOWN)
+		isDownCaps = !isDownCaps;
 	}
-	isDownCaps = !isDownCaps;
 }
 
 window.addEventListener('keydown', capsLockKeys)
 
 
-//Обработка оптициональных клавиш
+//Shift
+const shiftKeyDown = (event) => {
+	if(event.key === 'Shift') {
+		showKeyboard(language, KEY_UP)
+	}
+}
+
+
+const shiftKeyUp = (event) => {
+	if(event.key === 'Shift') {
+		showKeyboard(language, KEY_DOWN)
+	}
+}
+
+window.addEventListener('keydown', shiftKeyDown)
+window.addEventListener('keyup', shiftKeyUp)
+
+
+
+//Shift + Caps
+const shiftCapsKeyDown = (event) => {
+	if(event.key === 'Shift' && isDownCaps) {
+		showKeyboard(language, KEY_SHIFT_CAPS)
+	}
+}
+
+
+const shiftCapsKeyUp = (event) => {
+	if(event.key === 'Shift' && isDownCaps) {
+		showKeyboard(language, KEY_CAPS)
+	}
+}
+
+window.addEventListener('keydown', shiftCapsKeyDown)
+window.addEventListener('keyup', shiftCapsKeyUp)
+
+
+
+//Ctrl + Alt
 const changeLanguage = (event) => {
 	if( event.altKey && event.ctrlKey ) {
 		if(getLanguageFromLocalestorage() === EN) {
