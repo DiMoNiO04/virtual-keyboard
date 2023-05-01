@@ -108,3 +108,12 @@ body {
 .hidden {
 	display: none;
 }
+
+.key:hover {
+	background: rgb(5, 206, 139) !important;
+}
+
+.key:active {
+	background: rgb(3, 104, 70) !important;
+}
+

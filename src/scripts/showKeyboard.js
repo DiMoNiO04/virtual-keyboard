@@ -106,13 +106,13 @@ const CAPS_LOCK_KEY = document.querySelector('[data-key="CapsLock"]')
 
 const capsLockKeys = (event) => {
 	if(isDownCaps === false) {
-		CAPS_LOCK_KEY.classList.toggle('active');
+		CAPS_LOCK_KEY.classList.add('active');
 		showKeyboard(language, KEY_CAPS)
 		isDownCaps = !isDownCaps;
 		return;
 	} 
 	if(isDownCaps === true) {
-		CAPS_LOCK_KEY.classList.toggle('active');
+		CAPS_LOCK_KEY.classList.remove('active');
 		showKeyboard(language, KEY_DOWN)
 		isDownCaps = !isDownCaps;
 		return;
@@ -232,3 +232,70 @@ window.addEventListener('keyup', (event) => {
 	}
 	releaseKey(event)
 })
+
+
+
+
+for(let i = 0; i < keysHTML.length; i++) {
+	keysHTML[i].addEventListener('click', (event) => {
+
+		keysHTML[i].classList.add('active');
+		let keyName = event.currentTarget.getAttribute('data-key');
+
+		if( keyName !== 'CapsLock' ) {
+			setTimeout(() => keysHTML[i].classList.remove('active'), 500)
+		}
+
+		if(keyName === 'CapsLock') {
+			capsLockKeys()
+		}
+
+		if(keyName === 'Tab') {
+			textarea.value += '    ';
+			return;
+		} 
+
+		if(keyName === 'Enter') {
+			textarea.value += '\n';
+			return;
+		} 
+
+		if(keyName === 'Backspace') {
+			textarea.value = textarea.value.slice(0, -1);
+			return;
+		} 
+
+		if(keyName === 'Space') {
+			textarea.value += ' ';
+			return;
+		} 
+
+		if(keyName === 'Delete') {
+			return;
+		} 
+
+		if (keyName === 'Control' || keyName === 'Meta' || 
+			keyName === 'CapsLock' || keyName === 'Shift' || keyName === 'Alt' ||
+			keyName === 'ShiftLeft' || keyName === 'ShiftRight'
+			) {
+				return;
+		}
+
+		let keyElemChilds;
+		(language === RU) ? keyElemChilds = keysHTML[i].children[1] : keyElemChilds = keysHTML[i].children[0];
+		
+		for(let keyElemChild = 0; keyElemChild < keyElemChilds.children.length; keyElemChild++) {
+			if(!keyElemChilds.children[keyElemChild].classList.contains('hidden')) {
+				textarea.value += keyElemChilds.children[keyElemChild].textContent
+			}
+		}
+	})
+}
+
+const SHIFT_LEFT = document.querySelector('[data-key="ShiftLeft"]');
+const SHIFT_RIGHT = document.querySelector('[data-key="ShiftRight"]')
+
+SHIFT_LEFT.addEventListener('mousedown', showKeyboard(language, KEY_UP))
+SHIFT_LEFT.addEventListener('mouseup', showKeyboard(language, KEY_DOWN))
+SHIFT_RIGHT.addEventListener('mousedown', showKeyboard(language, KEY_UP))
+SHIFT_RIGHT.addEventListener('mouseup', showKeyboard(language, KEY_DOWN))
