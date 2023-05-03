@@ -291,7 +291,18 @@ keysHTML.forEach((key) => {
 const SHIFT_LEFT = document.querySelector('[data-key="ShiftLeft"]');
 const SHIFT_RIGHT = document.querySelector('[data-key="ShiftRight"]');
 
-SHIFT_LEFT.addEventListener('mousedown', showKeyboard(KEY_UP));
-SHIFT_LEFT.addEventListener('mouseup', showKeyboard(KEY_DOWN));
-SHIFT_RIGHT.addEventListener('mousedown', showKeyboard(KEY_UP));
-SHIFT_RIGHT.addEventListener('mouseup', showKeyboard(KEY_DOWN));
+SHIFT_LEFT.addEventListener('mousedown', () => {
+	showKeyboard(KEY_UP)
+});
+
+SHIFT_LEFT.addEventListener('mouseup', () => {
+	showKeyboard(KEY_DOWN)
+});
+
+SHIFT_RIGHT.addEventListener('mousedown', () => {
+	showKeyboard(KEY_UP)
+});
+
+SHIFT_RIGHT.addEventListener('mouseup', () => {
+	showKeyboard(KEY_DOWN)
+});
