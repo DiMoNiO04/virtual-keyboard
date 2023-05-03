@@ -1,0 +1,119 @@
+body {
+	background-color: #c5c5c5;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.title {
+	font-size: 36px;
+	font-weight: 700;
+	color: rgb(11, 95, 11);
+	margin: 0;
+}
+
+.textarea {
+	display: block;
+	padding: 16px;
+	font-size: 24px;
+	color: rgb(3, 104, 70);
+	box-sizing: border-box;
+	border: 5px solid #000;
+	border-radius: 10px;
+}
+
+.keyboard {
+	width: 890px;
+	padding: 10px;
+	background: rgb(4, 196, 196);
+	border: 5px solid rgb(3, 104, 70);
+	border-radius: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 7px;
+	column-gap: 7px;
+	justify-content: space-between;
+}
+
+.key {
+	width: 48px;
+	height: 48px;
+	font-weight: 700;
+	line-height: 40px;
+	font-size: 16px;
+	text-align: center;
+	color: rgb(3, 251, 168);
+	background: #444;
+	border-radius: 8px;
+	border: 2px solid rgb(3, 104, 70);
+	cursor: pointer;
+	transition: all 0.15s;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+}
+
+.text__content {
+	margin: 0;
+	font-size: 20px;
+}
+
+.key[data-key="Backspace"],
+.key[data-key="CapsLock"],
+.key[data-key="Enter"],
+.key[data-key="ShiftLeft"],
+.key[data-key="ShiftRight"]  {
+	width: 111px;
+}
+
+.key[data-key="Space"] {
+	width: 406px; 
+}
+
+.key[data-key="Backspace"], 
+.key[data-key="Delete"],
+.key[data-key="Enter"],
+.key[data-key="ShiftLeft"],
+.key[data-key="ShiftRight"], 
+.key[data-key="Tab"],
+.key[data-key="CapsLock"],
+.key[data-key="ControlLeft"],
+.key[data-key="ControlRight"], 
+.key[data-key="MetaLeft"],
+.key[data-key="AltLeft"],
+.key[data-key="AltRight"], 
+.key[data-key="Space"],
+.key[data-key="ArrowRight"],
+.key[data-key="ArrowLeft"],
+.key[data-key="ArrowUp"],
+.key[data-key="ArrowDown"] {
+	background: #1b1818;
+}
+
+.active {
+	border-radius: 20px !important;
+	background: rgb(3, 104, 70) !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.key:hover {
+	background: rgb(5, 206, 139) !important;
+}
+
+.key:active {
+	background: rgb(3, 104, 70) !important;
+}
+
